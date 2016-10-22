@@ -369,6 +369,5 @@
 	<classpathentry kind="lib" path="/usr/lib/hadoop/lib/xmlenc-0.52.jar"/>
 	<classpathentry kind="lib" path="/usr/lib/hadoop/lib/xz-1.0.jar"/>
 	<classpathentry kind="lib" path="/usr/lib/hadoop/lib/zookeeper.jar"/>
-	<classpathentry kind="lib" path="/home/cloudera/workspace/HiveProject/json-simple-1.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

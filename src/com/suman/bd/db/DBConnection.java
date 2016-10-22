@@ -1,3 +1,4 @@
+package com.suman.bd.db;
 import java.sql.SQLException;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -12,12 +13,6 @@ public class DBConnection {
       Class.forName(driverName);
       
       Connection con = DriverManager.getConnection("jdbc:hive2://localhost:10000/hivedemo", "", "");
-      /*Statement stmt = con.createStatement();
-      
-      stmt.execute("CREATE DATABASE IF NOT EXISTS sumanKoDB");
-      System.out.println("Database userdb created successfully.");
-      
-      con.close();*/
       return con;
    }
    
