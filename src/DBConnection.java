@@ -11,7 +11,7 @@ public class DBConnection {
    public static Connection getConnection() throws SQLException, ClassNotFoundException {
       Class.forName(driverName);
       
-      Connection con = DriverManager.getConnection("jdbc:hive2://localhost:10000/default", "", "");
+      Connection con = DriverManager.getConnection("jdbc:hive2://localhost:10000/hivedemo", "", "");
       /*Statement stmt = con.createStatement();
       
       stmt.execute("CREATE DATABASE IF NOT EXISTS sumanKoDB");
