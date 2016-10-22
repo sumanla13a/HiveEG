@@ -1,8 +1,6 @@
 package com.suman.bd.db;
 import java.sql.SQLException;
 import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
 import java.sql.DriverManager;
 //import org.apache.hadoop.hive.jdbc.HiveDriver;
 
