@@ -2,22 +2,22 @@
 
 Author <a href="https://github.com/sumanla13a"><b>Suman Lama</b></a>
 
-<h1>Description:</h1>
-<p> A demo project to illustrate the use of Hive.</p>
-<p> This project uses yum.log file of the redHat Linux system. It adds the log details in Hive as a text file with <b>entryDate</b> and <b>entryMessage</b> as its format.</p>
+Description:
+- A demo project to illustrate the use of Hive.
+- This project uses yum.log file of the redHat Linux system. It adds the log details in Hive as a text file with <b>entryDate</b> and <b>entryMessage</b> as its format.
 
-<h1> Steps used: </h1>
-<ol>
-  <li> Add the jar files in directory <b>hive</b>.</li>
-  <li>Create database with <code>Create database databaseName</code></li>
-  <li>Create table with <code>Create table tableName</code>
-    <ul> 
-      <li> Use row formatter delimiter with following regex to separate: <code> Select</code></li>
-      <li> Save as textFile with: <code> Select</code></li>
-    </ul>
-  <li> Insert log file with: <code> Select</code></li>
-  <li> Run a query command : <code> Select</code> </li>
-</ol>
+Steps used:
+  - Add the jar files in directory <b>hive</b>.
+  - Create database with <code>Create database databaseName</code>
+  - Create table with <code>Create table tableName</code>. Use serde(Serialize/Deserialize) properties as follows. (SERDE is used to read data from elsewhere and write it in hdfs according to your requirement. In this case with a regular expression)
+    - Use row formatter delimiter with following regex to separate: <code> (^[a-zA-Z]{3} \d{2} \d{2}:\d{2}:\d{2}) (.*)</code>
+    - Save as textFile with: <code> "'output.format.string' = '%1$s %2$s'"</code> where %1$s and %2$s represents two groups from above regex
+  - Insert log file with: <code> LOAD DATA LOCAL INPATH {location of log} INTO TABLE HiveDemoTable;</code>
+  - Run a query command : <code> Select distinct(entryDate) from hivedemotable;</code>
 
-<h1> Steps to Run </h1>
-<li> Add it in Eclipse and run </li>
+Steps to Run
+	- Add it in Eclipse and run Main to create DB and table then inserting data
+	- Then run ReadAll to read all entries for Aug 10
+	- Run ReadDistinct to read distinct dates of entry
+	- Run DropTable to drop the table.
+	[NOTE: Run main again after dropping table.]

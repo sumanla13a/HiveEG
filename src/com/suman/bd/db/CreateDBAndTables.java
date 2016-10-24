@@ -19,7 +19,7 @@ public class CreateDBAndTables {
 		stmt.execute("CREATE TABLE IF NOT EXISTS HiveDemoTable (entryDate String, logInfo String) "
 					+ " ROW FORMAT SERDE 'org.apache.hadoop.hive.contrib.serde2.RegexSerDe'"
 					+ " WITH SERDEPROPERTIES ( "
-					+ "'input.regex' = '(^[a-zA-Z]{3}\\\\s+\\\\d{2}\\\\s+\\\\d{2}:\\\\d{2}:\\\\d{2})\\\\s+(.*)',"
+					+ "'input.regex' = '(^[a-zA-Z]{3} \\\\d{2} \\\\d{2}:\\\\d{2}:\\\\d{2}) (.*)',"
 					+ "'output.format.string' = '%1$s %2$s'"
 					+ ") "
 					+ "STORED AS TEXTFILE");
