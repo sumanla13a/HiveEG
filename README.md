@@ -21,3 +21,7 @@ Author <a href="https://github.com/sumanla13a"><b>Suman Lama</b></a>
 	- Run ReadDistinct to read distinct dates of entry
 	- Run DropTable to drop the table.
 	[NOTE: Run main again after dropping table.]
+
+# Note
+   - <code>Select * </code> uses fetch task rather than map reduce so it is fast.
+   - <code> Select distinct(entryDate) </code> uses map reduce task and is slower.
